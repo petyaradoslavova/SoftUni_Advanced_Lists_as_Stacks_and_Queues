@@ -1,0 +1,17 @@
+box_of_clothes = ([int(x) for x in input().split()])
+one_rack_capacity = int(input())
+
+copy_one_rack_capacity = one_rack_capacity
+
+racks_count = 1
+
+while box_of_clothes:
+    current_item = box_of_clothes.pop()
+    if copy_one_rack_capacity >= current_item:
+        copy_one_rack_capacity -= current_item
+    else:
+        racks_count+=1
+        copy_one_rack_capacity = one_rack_capacity
+        copy_one_rack_capacity -= current_item
+
+print(racks_count)
